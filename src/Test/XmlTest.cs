@@ -1,6 +1,10 @@
 using System;
 using System.Xml;
+#if NET35
+using NUnit.Framework;
+#else
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+#endif
 
 namespace Test
 {

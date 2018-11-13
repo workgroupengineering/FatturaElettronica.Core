@@ -19,7 +19,7 @@ namespace FatturaElettronica.Common
 
         public static bool IsGenericList(this Type type)
         {
-            return type.GetTypeInfo().IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>);
+            return type.GetTypeInfo().IsGenericType && typeof(System.Collections.IList).GetTypeInfo().IsAssignableFrom(type.GetGenericTypeDefinition().GetTypeInfo());
         }
     }
 }

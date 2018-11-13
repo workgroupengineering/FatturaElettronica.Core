@@ -63,15 +63,15 @@ namespace FatturaElettronica.Common
             var i = 0;
             foreach (var prop in props)
             {
-
-                // Default value for Lists is Count
-                if (prop.PropertyType.IsGenericList() && ((IList)prop.GetValue(this, null)).Count == 0)
-                {
-                    i++;
+                var v = prop.GetValue(this, null);
+                if (v is IEnumerable enumerable){
+                    if(enumerable?.GetEnumerator().MoveNext() == false)
+                    {
+                        i++;
+                    }
                     continue;
                 }
 
-                var v = prop.GetValue(this, null);
                 if (v == null) {
                     i++;
                     continue;

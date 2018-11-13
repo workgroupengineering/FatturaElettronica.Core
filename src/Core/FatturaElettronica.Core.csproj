@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.1;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>netstandard1.1;netstandard2.0;net35</TargetFrameworks>
     <Version>2.0.1</Version>
     <Authors>Nicola Iarocci</Authors>
     <Company>CIR 2000</Company>
@@ -21,13 +21,17 @@
     <None Remove="Test\**" />
   </ItemGroup>
 
+  <ItemGroup Condition="'$(TargetFramework)'!='net35'">
+    <Compile Remove="Compatibility\**"/>
+  </ItemGroup>
+
   <ItemGroup>
     <Content Include="..\..\LICENSE.txt" Link="LICENSE.txt" Pack="true"  PackagePath=""/>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
-    <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" Condition="'$(TargetFramework)' == 'netstandard1.1'" />
+    <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" Condition="'$(TargetFramework)'!='net35'"/>
   </ItemGroup>
 
 </Project>

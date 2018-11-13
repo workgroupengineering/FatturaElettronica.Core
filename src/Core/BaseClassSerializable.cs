@@ -275,7 +275,7 @@ namespace FatturaElettronica.Common
         public virtual string ToJson(JsonOptions jsonOptions)
         {
             var json = JsonConvert.SerializeObject(
-                this, (jsonOptions == JsonOptions.Indented) ? Formatting.Indented : Formatting.None,
+                this, (jsonOptions == JsonOptions.Indented) ? Newtonsoft.Json.Formatting.Indented : Newtonsoft.Json.Formatting.None,
                 new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore });
             return json;
         }
@@ -462,7 +462,7 @@ namespace FatturaElettronica.Common
                     // list items are expected to be of BusinessObject type.
                     var bo = Activator.CreateInstance(argumentType);
                     ((BaseClassSerializable)bo).ReadXml(r);
-                    add.Invoke(propertyValue, new[] { bo });
+                    add.Invoke(propertyValue, new object [] { bo });
                     continue;
                 }
 

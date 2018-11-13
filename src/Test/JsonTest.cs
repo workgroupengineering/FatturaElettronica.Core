@@ -1,7 +1,11 @@
 using System;
 using System.IO;
 using System.Xml;
+#if NET35
+using NUnit.Framework;
+#else
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+#endif
 using Newtonsoft.Json;
 
 namespace Test
