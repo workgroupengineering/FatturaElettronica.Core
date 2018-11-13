@@ -15,14 +15,14 @@
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 
-<ItemGroup>
-    <None Include="LICENSE.txt" Pack="true" PackagePath=""/>
-</ItemGroup>
-
   <ItemGroup>
     <Compile Remove="Test\**" />
     <EmbeddedResource Remove="Test\**" />
     <None Remove="Test\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\LICENSE.txt" Link="LICENSE.txt" Pack="true"  PackagePath=""/>
   </ItemGroup>
 
   <ItemGroup>

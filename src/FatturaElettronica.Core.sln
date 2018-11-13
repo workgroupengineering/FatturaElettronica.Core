@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FatturaElettronica.Core", "FatturaElettronica.Core.csproj", "{157BF9FE-D002-4129-91A9-E4D1C74BE861}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FatturaElettronica.Core", "Core\FatturaElettronica.Core.csproj", "{157BF9FE-D002-4129-91A9-E4D1C74BE861}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{778645B6-7E1F-4BAD-8488-8C110A91620C}"
 EndProject

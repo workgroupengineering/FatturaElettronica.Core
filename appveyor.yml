@@ -5,5 +5,5 @@ init:
 before_build:
   cmd: nuget restore
 build:
-  project: FatturaElettronica.Core.sln
+  project: ./src/FatturaElettronica.Core.sln
   verbosity: minimal
